@@ -1,216 +1,23 @@
-<!DOCTYPE html>
 <html>
   <head>
+    <title>ForMandy</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="mobile-web-app-capable" content="yes">
-    <title>I love you</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.19.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.19.1/firebase-auth-compat.js"></script>
-    <script
-      defer
-      src="/__/firebase/9.19.1/firebase-database-compat.js"
-    ></script>
-    <script
-      defer
-      src="/__/firebase/9.19.1/firebase-firestore-compat.js"
-    ></script>
-    <script
-      defer
-      src="/__/firebase/9.19.1/firebase-functions-compat.js"
-    ></script>
-    <script
-      defer
-      src="/__/firebase/9.19.1/firebase-messaging-compat.js"
-    ></script>
-    <script defer src="/__/firebase/9.19.1/firebase-storage-compat.js"></script>
-    <script
-      defer
-      src="/__/firebase/9.19.1/firebase-analytics-compat.js"
-    ></script>
-    <script
-      defer
-      src="/__/firebase/9.19.1/firebase-remote-config-compat.js"
-    ></script>
-    <script
-      defer
-      src="/__/firebase/9.19.1/firebase-performance-compat.js"
-    ></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body {
-        background: #eceff1;
-        color: rgba(0, 0, 0, 0.87);
-        font-family: Roboto, Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      #message {
-        background: white;
-        max-width: 360px;
-        margin: 100px auto 16px;
-        padding: 32px 24px;
-        border-radius: 3px;
-      }
-      #message h2 {
-        color: #ffa100;
-        font-weight: bold;
-        font-size: 16px;
-        margin: 0 0 8px;
-      }
-      #message h1 {
-        font-size: 22px;
-        font-weight: 300;
-        color: rgba(0, 0, 0, 0.6);
-        margin: 0 0 16px;
-      }
-      #message p {
-        line-height: 140%;
-        margin: 16px 0 24px;
-        font-size: 14px;
-      }
-      #message a {
-        display: block;
-        text-align: center;
-        background: #039be5;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: white;
-        padding: 16px;
-        border-radius: 4px;
-      }
-      #message,
-      #message a {
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-      }
-      #load {
-        color: rgba(0, 0, 0, 0.4);
-        text-align: center;
-        font-size: 13px;
-      }
-      @media (max-width: 600px) {
-        body,
-        #message {
-          margin-top: 0;
-          background: white;
-          box-shadow: none;
-        }
-      }
-    </style>
-    <style>
-      img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10%;
-        border-radius: 5%;
-      }
-      button {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10%;
-        background-color: #ffffff;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        border-radius: 12px;
-        transition-duration: 0.4s;
-      }
-      button:hover {
-        background-color: #922dac;
-      }
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: #d899e7;
-      }
-      h1 {
-        text-align: center;
-        color: white;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="applab/fa-brands-400.woff2" as="font">
+    <link rel="preload" href="applab/fa-solid-900.woff2" as="font">
+    <link rel="preload" href="applab/fa-regular-400.woff2" as="font">
+    <link rel="preload" href="applab/fa-v4compatibility.woff2" as="font">
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script>
+      function setExportConfig(config) { window.EXPORT_OPTIONS = config; }
+    </script>
+    <script src="https://studio.code.org/projects/applab/Zrtjqp-6E7PLTHzQuS8zdf_kb9D2peUv_jNk-oz__Ew/export_config?script_call=setExportConfig"></script>
+    <script src="applab/applab-api.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
+    <link rel="stylesheet" href="applab/applab.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>I love you, Mandy</h1>
-    <img
-      src="./images/IMG_0409.jpg"
-      width="80%"
-    />
-
-    <br /><br />
-
-    <button onclick="playAudio()">❤️</button>
-
-    <audio id="myAudio">
-      <source
-        src="./sounds/Recording.m4a"
-        type="audio/mpeg"
-      />
-    </audio>
-
-    <script>
-      function playAudio() {
-        var x = document.getElementById("myAudio");
-        x.play();
-      }
-    </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const loadEl = document.querySelector("#load");
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            "auth",
-            "database",
-            "firestore",
-            "functions",
-            "messaging",
-            "storage",
-            "analytics",
-            "remoteConfig",
-            "performance"
-          ].filter((feature) => typeof app[feature] === "function");
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(
-            ", "
-          )}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent =
-            "Error loading the Firebase SDK, check the console.";
-        }
-      });
-    </script>
+    <div id="divApplab" class="appModern running" tabindex="1" style="width: 100%; height: 100%"><div class="screen" tabindex="1" data-theme="default" id="screen1" style="display: block; height: 450px; width: 320px; left: 0px; top: 0px; position: absolute; z-index: 0; background-color: rgb(237, 201, 239);"><label style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; text-rendering: optimizespeed; color: rgb(255, 57, 157); background-color: rgba(0, 0, 0, 0); border-color: rgb(77, 87, 95); border-radius: 0px; border-width: 0px; font-family: &quot;Arial Black&quot;, Gadget, sans-serif; font-size: 20px; padding: 2px 15px; width: 245px; height: 50px; position: absolute; left: 40px; top: 30px; text-align: center;" id="label1">I love you, Mandy</label><img src="assets/IMG_1352.jpg" data-canonical-image-url="assets/IMG_1352.jpg" data-image-type="file" data-object-fit="contain" id="image1" style="height: 370px; width: 320px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); position: absolute; left: 2.22045e-16px; top: 30px; margin: 0px; border-radius: 0px; object-fit: contain; font-family: &quot;object-fit: contain;&quot;;"></div></div>
   </body>
 </html>
